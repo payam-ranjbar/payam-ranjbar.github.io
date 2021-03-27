@@ -3,22 +3,576 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Good Bad and The Fox</title>
+<title>Life, Death and The Sword</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:0.1em}0%,to{top:0px}}@keyframes shudder{25%{left:0.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:0.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:0.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%, to{transform:translateX(0em)}5%, 25%, 45%{transform:translateX(-1em)}15%, 35%, 55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%, to{transform:translateY(0em)}5%, 25%, 45%{transform:translateY(-1em)}15%, 35%, 55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%, 8.1%, 82.1%, 31.1%, 38.1%, 44.1%, 40.1%, 47.1%, 74.1%, 16.1%, 27.1%, 72.1%, 24.1%, 95.1%, 6.1%, 36.1%, 20.1%, 4.1%, 91.1%, 14.1%, 87.1%, to{left:0px;top:0px}8%, 82%, 31%, 38%, 44%{left:-1px}40%, 47%, 74%, 16%, 27%{left:1px}72%, 24%, 95%, 6%, 36%{top:-1px}20%, 4%, 91%, 14%, 87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:0.2}64%{opacity:0.4}78%{opacity:0.6}87%{opacity:0.8}92%, to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:black;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" title="' attr(title) '">'}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,0.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,0.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,0.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,0.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,0.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,0.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,0.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,0.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,0.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,0.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,0.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,0.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,0.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,0.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 0.5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,0.5)}.debug-mode tw-hook{background-color:rgba(0,85,255,0.1) !important}.debug-mode tw-hook::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,0.1) !important}.debug-mode tw-collapsed::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, rgba(255,204,189,0) 0%, rgba(255,204,189,0.25) 50%, rgba(255,204,189,0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, rgba(255,204,189,0.25) 0%, rgba(255,204,189,0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, rgba(255,204,189,0) 0%, rgba(255,204,189,0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,0.2)}.debug-mode tw-enchantment{animation:enchantment 0.5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,0.1)}.debug-mode tw-include::before{font-size:0.8rem;padding-left:0.2rem;padding-right:0.2rem;vertical-align:top;content:attr(type) ' "' attr(title) '"'}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:10em;min-height:1em;padding:0em 0.5em 0.5em 1em;font-size:1.25em;font-family:sans-serif;color:#000;border-left:solid #000 2px;border-top:solid #000 2px;border-top-left-radius:.5em;background:#fff;opacity:1}tw-debugger select{margin-right:1em;width:12em}tw-debugger button{border-radius:3px;border:solid #999 1px;margin:auto 4px;background-color:#fff;font-size:inherit;color:#000}tw-debugger button.enabled{background-color:#eee;box-shadow:inset #ddd 3px 5px 0.5em}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;max-height:40vh;overflow-y:scroll;overflow-x:hidden;z-index:999998;background:#fff;border:inherit;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:0.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger .panel-source,tw-debugger .panel-row-source{font-family:monospace;overflow-x:scroll;white-space:pre;-ms-flex-preferred-size:100%;flex-basis:100%}tw-debugger .panel-row-source{margin:5px 0}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background:#EEE}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#888;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#888;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#888;text-align:center}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:0.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:0.8;font-size:0.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#444;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,0.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,0.3)}tw-debugger .error-row>*{display:table-cell;padding:0.25em 0.5em}tw-debugger .error-row .error-message{cursor:help}tw-debugger .error-row .error-passage{color:#444}tw-debugger .storylet-row{background-color:rgba(201,233,222,0.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(128,203,178,0.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;opacity:0.4;background-color:rgba(217,217,217,0.3)}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:rgba(166,166,166,0.3)}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,0.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,0.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .tabs{padding-bottom:0.5em}tw-debugger .tab{border-radius:0px 0px 0.5em 0.5em;border-top:none}tw-debugger .resizer{position:absolute;height:3em;border-left:2px solid #ccc;border-right:2px solid #ccc;top:10px;left:4px;width:8px;cursor:ew-resize}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media (min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop ~ tw-backdrop{display:none}tw-link,.link,tw-icon,.enchantment-clickblock{cursor:pointer}tw-link,.enchantment-link{color:#4169E1;font-weight:bold;text-decoration:none;transition:color 0.2s ease-in-out}tw-passage [style^="color"] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^="color"][hover="true"] tw-link:hover,tw-passage [style*=" color"][hover="true"] tw-link:hover,tw-passage [style^="color"] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^="color"][hover="true"] .enchantment-link:hover,tw-passage [style*=" color"][hover="true"] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#DD4B39}.visited{color:#6941e1}tw-passage [style^="color"] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^="color"][hover="true"] .visited:hover,tw-passage [style*=" color"][hover="true"] .visited:hover{color:inherit}.visited:hover{color:#E3E}tw-broken-link{color:#993333;border-bottom:2px solid #993333;cursor:not-allowed}tw-passage [style^="color"] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^="color"][hover="true"] tw-broken-link:hover,tw-passage [style*=" color"][hover="true"] tw-broken-link:hover{color:inherit}.enchantment-mouseover{border-bottom:2px dashed #999}.enchantment-mouseout{border:rgba(64,149,191,0.6) 1px solid}.enchantment-mouseout:hover{background-color:rgba(175,197,207,0.75);border:transparent 1px solid;border-radius:0.2em}.enchantment-clickblock{width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,0.5);transition:color 0.2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,0.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,0.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 0.5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 0.5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,0.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,0.75);border:transparent 2px solid;border-radius:0.2em}tw-link.enchantment-button,.enchantment-link.enchantment-button,.enchantment-button:not(.enchantment-link) tw-link,.enchantment-button:not(.enchantment-link) .enchantment-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia, serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media (min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:transparent;font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:transparent;font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 0.5em}tw-story tw-noscript{animation:appear 0.8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media (min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}}tw-icon{display:inline-block;margin:0.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:0.2}tw-icon[alt]:hover{opacity:0.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:0.2em;padding:0.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,0.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,0.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:0.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:1px;border:1px solid black;font-size:0.8rem;margin:0 0.4rem;padding:2px;white-space:pre}tw-folddown::after{content:"\25b6"}tw-folddown.open::after{content:"\25bc"}tw-open-button::after{content:"Open"}tw-notifier{border-radius:0.2em;padding:0.2em;font-size:1rem;background-color:rgba(223,182,58,0.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid black;display:inline-block;width:1em;height:1em}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:0.3em 0 0.6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,0.6);background-color:#ff9}ins{color:rgba(0,0,0,0.6);background-color:rgba(255,242,204,0.5);border-radius:0.5em;box-shadow:0em 0em 0.2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Good Bad and The Fox.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Good Bad and The Fox" startnode="1" creator="Twine" creator-version="2.3.13" ifid="7FB13B19-9194-4DB9-9FCA-CF9DB154444A" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-passage
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Life, Death and The Sword.</tw-noscript></noscript></tw-story>
+<tw-storydata name="Life, Death and The Sword" startnode="1" creator="Twine" creator-version="2.3.13" ifid="7FB13B19-9194-4DB9-9FCA-CF9DB154444A" zoom="0.6" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@font-face {
+  font-family: 'B Nazanin Bold';
+  src: url('B Nazanin Bold.ttf') format('truetype'), /* Modern Browsers */
+       url('B Nazanin Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+tw-passage
 {
   direction : rtl;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="668,291" size="100,100">سلام دوست عزیز
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: "B Nazanin Bold"
+
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="footer" color="red"></tw-tag><tw-passagedata pid="1" name="Initializer" tags="" position="107,130" size="100,100">(set: $_GUNNED to false)
+(set: $_KILLED to false)
+(set: $_EXPOSED to false)
+
+(text-colour:grey)[#زندگی، مرگ، شمشیر
+]
+
+(text-style:&quot;sway&quot;)[[[شروع داستان-&gt;Intro]]]</tw-passagedata><tw-passagedata pid="2" name="Intro" tags="" position="98,311" size="100,100">هوای جاده چند ساعتی میشد که تاریک شده بود. مشعل بزرگی بر سقف ارابه شعله ور بود. چهار سامورایی سواره و چندین سرباز ارابه دای میو، فرمانده شهر، را همراهی میکردند. فرمانده ای که در حال بازگشت از جشن بزرگ شوگان در &quot;ادو&quot; بود.
+
+نگاه سامورایی ها دائما به اطراف بود. صدایی از درختان اطراف باعث شد تا یکی از آنها فرمان ایست بدهد. نگاهش به درختان خیره شده بود. شاخ برگ آنها در حال تکان خوردن بود. قبضه شمشیرش را به دست گرفت. تمام سربازان کمان های خودشان را زه کردند. حرکت شاخه ها بیشتر شد. ناگهان جغد بزرگی از میان آنها پدیدار شد. هو هو کنان به سمت دیگر جاده پرواز کرد.
 
 
-[[چطوری عزیز-&gt;Untitled Passage 1]]
-&lt;audio src=&quot;Vinyl Noise_02.wav&quot; autoplay loop&gt;
-</tw-passagedata><tw-passagedata pid="2" name="Untitled Passage 1" tags="" position="895,311" size="100,100">Double-click this passage to edit it.
-&lt;audio src=&quot;Church Choir_Dm.wav&quot; autoplay&gt;
+
+[[صفحه بعد-&gt;Line1-Scene1-2]]</tw-passagedata><tw-passagedata pid="3" name="Line1-Scene1-2" tags="" position="260,407" size="100,100">کمان ها پایین آمد. سامورایی نفس راحتی کشید. دستش را به نشانه ادامه حرکت به بالا آورد. ناگهان متوجه شد چاقوی کوچکی در سینه اش فرو رفته است. در یک چشم بهم زدن خنجر دیگری به سمتش پرتاب شد. خنجری دیگر در صورت اش فرود آمد. سامورایی بی جان از روی اسب افتاد. سربازان و سواره ها همه شمشیر هایشان را از غلاف در آوردند.
+
+آسمان سیاه شب شروع به بارش تیر کرد. به سپر های چوبی سامورایی ها برخورد کرد. بدن سربازان هم بی نصیب نماند. بیشتر از نیمی از سربازان از پا در آمدند. اسبان همگی آسیب دیدند و رم کردند. ناگهان از میان درختان سایه هایی شمشیر به دست حمله ور شدند. صدای کشیده شدن فلز به چوب فضای جاده را پر کرد. سربازان یکی یکی  نقش بر زمین شدند. سامورایی ها از اسب هایشان پایین آمدند. شروع به چرخاندن شمشیر هایشان کردند. یکی در میان فریاد میزدند: « از ارباب محافظت کنید! نزدیک ارابه بمانید!»
+
+از میان سایه ها خنجر های براقی مانند صاعقه به سمتشان پرتاب میشد. سرانجام هر شکم هر سه شان با کاتانا های متحرک در هوا پاره شد.
+
+[[صفحه بعد-&gt;Line1-Scene1-3]]</tw-passagedata><tw-passagedata pid="4" name="Line1-Scene1-3" tags="" position="401,406" size="100,100">آتش جنگ خوابید و دوباره تنها صدای جاده سوختن شعله مشعل شد. مردان سیاه پوش یکی یکی ماسک های صورتشان را برداشتند. 
+
+« ها ها ها، فکر نمی کردم، انقدر آسون باشه. سامورایی های افسانه شون اینا بودن!!! حداقل بیاید برگشتنی یک ببری، چیزی شکار کنیم. این خیلی زود تموم شد. »
+
+هاتاکه هیکارو همچنان که در حال به سخره گرفتن گارد &quot;دای میو&quot; بود، به در ارابه نزدیک شد. در ارابه را با لگد از جا کند. با اشاره ای به گروه، سرباز ها وارد ارابه شدند و افراد داخل را دهان بسته و طناب پیچ بیرون آوردند.
+
+«به به، مثل دو قناری توی فقس. دای میو تاراگوسا؛ و این... بچه!»
+
+هاتاکه به سمت کودک همراه دای میو رفت. کودکی 10 12 ساله، که با دهان بسته شده اش، در حال گریه کردن بود اما صدایی ازش در نمی آمد. دای میو دهان بسته، شروع به فریاد زدن کرد. حرف هایی که هیچ کس متوجه اش نمیشد. تنها از صورت خشمگین و عرق کرده اش میشد فهمید قصد دارد چه بگوید. تهدید هایی تو خالی و خارج از توانش.
+
+هاتاکه روبروی آنها نشست. به نگاهی به کودک و دای میو انداخت.
+با لحنی آرام تر گفت: «من نفرین همون روستایی هایی هستم که با تیغ سامورایی هات جیب شان را خالی میکنی.»
+
+رو به کودک کرد «بچه! درس امروز اینه! به کسی که زورت بهش میرسه، زور نگو؛ چون حتما از تو قوی تر هم وجود داره.»
+
+ایستاد. شمشیرش از غلاف بیرون کشید. بر دو دست گرفت. دستانش را بالا آورد.
+
+[[صفحه بعد-&gt;Line1-Scene1-4]]</tw-passagedata><tw-passagedata pid="5" name="Line1-Scene1-4" tags="" position="567.6666666666666,351" size="100,100">«هاتاکه!»
+
+هاتاکه برگشت، آکیرا را دید که در حال پاک کردن خون از خنجرهایش است. 
+آکیرا کاوارو، خنجر هایش را غلاف کرد. به سمت هاتاکه قدم برداشت. 
+«تو که نمیخواهی یک ارباب را جلوی فرزندش خلاص کنی؟»
+هاتاکه ریز غره ای از عصبانیت کشید. 
+«خیلی خب. بیایید این بچه روببرید یجا گم و گور کنید!»
+
+دوباره شمشیر را بالا آورد. آکیرا دستش گرفت و کشید پایین. او را به سمت خودش کشید و صورتش را نزدیک گوشش برد.
+«مثل اینکه، هنوز نفهمیدی ما برای چی اینجا آمده ایم!»
+هاتاکه گفت: « چیزی که من بخاطرش اینجام، خون ریزیه، بهتره تو هم جلوی من رو نگیری»
+
+آکیرا دوباره مانع از بالا رفتن شمشیر شد و گفت:« احمق بازی در نیار، ما برای کشتنش پول نگرفتیم. قرار شد انتقام باج گیری اش رو بگیرم. فرصت های بعدی رو  از دست نده»
+
+آکیرا، جنگجوی شمشیر به دست را رها کرد. نگاهی به کودک انداخت و بلند گفت: « فکر کنم، دای میو تا همین جا هم تقاص کارهایش را پس داده باشد. باید رفتار از الان به بعدش را دید.»
+
+(text-style:&quot;sway&quot;)[[[هاتاکه سر دای میو را از تن جدا کرد.-&gt;Line2-Scene1-6]]]
+
+[(text-style:&quot;sway&quot;)+(text-colour:grey)[هاتاکه شمشیرش را غلاف کرد. (در دست ساخت)]]</tw-passagedata><tw-passagedata pid="6" name="Line1-Scene1-5" tags="" position="834,107" size="100,100">هاتاکه شمشیرش را پایین آورد. محکم در غلافش فرو برد. با چهره ای خشمگین رو به آکیرا گفت:« این بار هم حق با تو!»
+
+آکیرا رو به هفت جنگجوی گروه کرد و گفت: « ما اینجا ایم که به دای ¬میو درسی بدهیم. این یک پیغام از روستای &quot;یاما میتسو&quot; هست. دوران باج گیری و غارت رو به پایان است. این بار تو را به خاک انداختیم. دفعه بعد، فرصتی در کار نخواهد بود. سر بریده ات را خوراک کرکس ها میکنیم.»
+
+هاتاکه حرف آکیرا را قطع کرد:« شعار دادن بسه!»
+به سمت اسیر ها رفت، دای¬ میو را از گردن گرفت و بر زمین خاک کرد. زره و بالا پوش او را از تنش در آورد.
+
+« این ها رو نمیکشیم اما همینجور کت بسته همینجا می مونند، تا بخت باهاشون یار باشه و خوراک گرگ ها نشن؛ تا این جا که یار شفیق شان بوده!»
+به سمت جنگل های کنار جاده رفت.
+
+آکیرا به جنگجویان فرمان رفتن داد. هر هفت نفر به سمتش تعظیم کردند و دو دستشان را به هم کوبیدند.
+«بله، سنسی»
+
+(set: $_KILLED to false)
+
+[[صفحه بعد-&gt;Village Scene]]</tw-passagedata><tw-passagedata pid="7" name="Line2-Scene1-6" tags="" position="797.9999999999999,342" size="100,100">هاتاکه با تمام قدرت شمشیرش را پایین می آورد. کاتانا سر دای میو را از تنش جدا میکند. با تمام وجود شروع به خندیدن میکند. سر را از مو های بسته شده اش میگیرد و بالا می آورد. دوباره می خندند. کل گروه همزمان با او فریاد هیجان سر میدهند.
+« هو، هو، هو، هو...»
+
+آکیرا، ساکت مانده است. دستش را به پیشانی میگذارد و تکان میدهد. زیر لب گفت:« لعنت بر تو...»
+
+هاتاکه سمت کودک میرود. دستان و دهانش را باز میکند. کودک خشکش زده است. نه گریه میکند و نه فریاد میزند. سر بریده شده را به زور به دستش میدهد.
+«خوب به این دقت کن، مراقب باش که به این روز نیفتی!»
+به امتداد جاده اشاره میکند. « همین جاده رو بگیری، فردا صبح به خونه ات میرسی. حالا بدو.... دِ بدو...»
+در آخر با فریادی ترسناک، کودک از خشک زدگی در آمد و گریه کنان شروع به دویدن کرد.
+
+« خب دیگه، وقت برگشتنه، حوصله ببر اینا هم ندارم، آخرِ همین جالب شد برام» 
+هاتاکه با خنده ای بلند به سمت جسد بدون سر و زره و بالا پوش را از آن درآورد.
+گروه سوار بر اسب هایشان شدند.
+(set: $_KILLED to true)
+
+[[صفحه بعد-&gt;Village Scene]]</tw-passagedata><tw-passagedata pid="8" name="Village Scene" tags="" position="1012.0000000000001,324.6666666666667" size="100,100">« درود بر شما، تشکر از شما...»
+روستاییان فریاد به سر میدادند و شادی میکردند.
+نه سوار جنگی به روستا برگشته بودند. هاتاکه و آکیرا جلو تر از همه به سمت میدان اصلی حرکت میکردند.
+شخصی از میان جمعیت به جلو آمد. بر دو استاد تعظیم کرد.
+«سنسی آکیرا، سنسی هاتاکه؛ اهالی روستا قدردان لطف بزرگی که انجام داده اید هستند.»
+
+آکیرا که از روی اسبش آن روستایی را زیر نظر داشت، گفت:« قدردانی شما تنها در یک صورت به ما اثبات میشود.»
+«بله ارباب آکیرا، ویلایی در انتهای این مسیر برای شما فراهم کرده ایم. در آنجا مستقر شوید. در حد توانمان خواسته هایتان را برآورده کردیم.»
+روستایی آنها را به سمت ویلا همراهی کرد.
+
+دو جنگجو از اسب پیاده شدند. هر سه به سمت درب کشویی خانه رفتند. مرد روستایی در را باز کرد. در تا نیمه باز شده بود که هاتاکه فریادی توام از تعجب و شادی کشید.
+«چه خبره اینجا! از این به بعد هر بد خواهی داشتید به خودم بگید.»
+هاتاکه به داخل رفت. اتاقی پر از سینی غذا های مختلف، ردیف چیده شده وسط اتاق و در انتهای اتاق دو کاتانای بزرگ مرغوب با غلاف و قبضه خراطی شده و در کنارش کیسه ای سر باز پر از سکه طلا.
+
+روستایی تعظیم کوچکی کرد و گفت: «این ویلا از الان تا هر وقت که خواستید در اختیار شما قرار دارد.»
+آکیرا با چهره ای تعجب زده پرسید: « ما فقط یک کیسه طلا خواستیم. این ها برای چیست؟»
+روستایی همچنان در حالت تعظیم مانده بود و ادامه داد:« اینها تنها جبران بخش کوچکی از زحمات شماست. آموزش رزم به جوانان روستا و ایستادگی در برابر ظلمِ دای میو کار های بزرگی است. امیدوارم پیش کشی های ما را بپذیرید.»
+
+
+(if:$_KILLED is true)[[[صفحه بعد-&gt;Flee Scene 1]]]
+(if:$_KILLED is false)[[[صفحه بعد-&gt;Village Burn Scene]]]</tw-passagedata><tw-passagedata pid="9" name="Flee Scene 1" tags="" position="985.6666666666667,502.00000000000006" size="100,100">«بیا تو در رو ببند.»
+هاتاکه با دهان پر آکیرا را به نشستن کنارش دعوت کرد. آکیرا توجهی نکرد و به سمت دو کاتانا رفت. نگاهی به آنها انداخت و سپس کیسه سکه را برداشت و شروع کرد به شمارش سکه ها.
+
+«دیشب ثابت کردی همان اندک شرافتی هم که داشتی از بین رفته. حتی به سر بریده دای میو هم احترام نگذاشتی»
+
+«تو هنوز درگیر دیشبی؟ بیا بشین شیکمت رو سیر کن. شرافت مرافت برا همون زمانای جنگی بود. الان باید بشینی شعر و شاعری کنی یا میندازنت دور. در ضمن میبینی که الان هم بد نشده... بزار یک سودی هم این بنده خدا ها بکنن. »
+
+«من هیچ اهمیتی به این احمق ها نمی دهم»
+
+«اونو ول کن. بیا این یکی سوپ فکر کنم توش گوشت کبک داره، من خیلی حال کردم.»
+آکیرا حرفی نزد. همان جا که ایستاده بود نشست.
+
+[[صفحه بعد -&gt; Flee Scene 2]]</tw-passagedata><tw-passagedata pid="10" name="Village Burn Scene" tags="" position="1311.3333333333333,145.33333333333331" size="100,100">Village Burn Scene</tw-passagedata><tw-passagedata pid="11" name=" Flee Scene 2" tags="" position="196,722" size="100,100">صبح روز بعد.
+
+هر دو از خواب پریدند. یکی در را تند تند میکوبید. آکیرا در را باز کرد.
+
+«سنسی، هر چه سریع تر باید از اینجا بروید. یک گروه سامورایی تصویر کشیده شما را در دست دارند و به دنبالتان میگردند.»
+
+آکیرا با چهره ای عصبانی برگشت و به هاتاکه خیره شد.
+هاتاکه با چشمان درشت شده از تعجب شانه بالا انداخت « به من چه، بچه انقدر نقاشی اش خوب بوده»
+
+« راه فرار را نشان بده» آکیرا به روستایی اشاره کرد. سپس رفت کاتانا و کیسه سکه را برداشت.
+
+هر دو جنگجو آهسته و خمیده از خانه بیرون شدند. روستایی را دنبال کردند و به سمت جنگل های بامبو رفتند.
+
+صدای سم اسبان سامورایی شنیده میشد، که داشتند تمام روستا را زیر و رو میکردند.
+صدای سر گروه سامورایی را شنیده میشد که میگفت :« این دو نفر، قاتلان دای میو تاراگوسا! ارباب شما هستند. وظیفه شما این است که به محض دیدنشان آن ها را بکشید و سر شان را به کاخ بیاورید. به هرکس که سر آنان را جدا کند ده هزار سکه اهدا میشود و هر کس که مکان آن ها را به ما گزارش دهد هزار سکه پاداش دریافت میکند.»
+
+آکیرا و هاتاکه به جنگل رسیدند. روستایی به آنها احترام گذاشت و رفت.
+
+[[صفحه بعد -&gt; Flee Scene 3]]</tw-passagedata><tw-passagedata pid="12" name=" Flee Scene 3" tags="" position="198,845" size="100,100">هر دو برگشتند و آهسته شروع به دویدن کردند. ناگهان صدایی بلند شد. 
+« آهای شما کیستید؟ بایستید.»
+
+جنگجو ها سرعت خودشان را زیاد کردن. سامورایی سواره به طرفشان می تاخت و با فریادش دیگران را خبر میکرد.
+جنگل های بامبو، جای اسب دوانی نبود. سامورایی متوقف شد و از اسب آمد پایین. به سمتشان دوید.
+
+آکیرا نگاهی به عقب انداخت، سامورایی با سرعت چند برابر آنها در حال نزدیک شدن بود. یکی از خنجر هایش را به سمتش پرتاب کرد.
+
+سامورایی خودش را از مسیر خنجر کنار کشید. آکیرا ایستاد. شمشیرش را در آورد و به دو دست گرفت. هاتاکه چند قدمی جلو تر متوجه توقفش شد. او هم ایستاد. شمشیرش را در آورد و به سمت آکیرا قدم برداشت.
+
+[[صفحه بعد -&gt; Flee Fight Scene 1]]</tw-passagedata><tw-passagedata pid="13" name=" Flee Fight Scene 1" tags="" position="329,726" size="100,100">سامورایی که متوجه جدال پیش رو شد. از سرعتش کم کرد. کاتانا به دست، گارد گرفت. آرام آرام به آن دو نزدیک شد.
+
+ناگهان هاتاکه فریاد زنان به سمتش دوید، آکیرا را کنار زد و شمشیرش را بر سامورایی فرود آورد. دو شمیشر به هم خوردند. ضربه ای دیگر و ضربه ای دیگر. سامورایی شمشیر کوچک تر اش را به دست دیگر گرفت. به سمت پهلوی هاتاکه کشید. قبل از فرود آمد ضربه آکیرا شمشیر خودش را بر سر سامورایی فرود آورد. سامورایی با لگدی هاتاکه را پرت کرد. با شمشیرش جلوی حرکت شمشیر را گرفت. آکیرا با چند پرش به عقب جهید.
+
+آکیرا از قدرت سامورایی ترسید. فاصله اش را با او حفظ کرد. یکی از خنجر هایش را در آورد. پرتاب کرد. در همان لحظه هاتاکه با شمشیر حمله ور شد. اما کاتانا به خنجر در هوا خورد و آن را منحرف کرد. سامورایی و هاتاکه هردو متعجب به خنجر نگاه کردند. سامورایی سرش را به سر هاتاکه کوبید. سری که توسط کلاه خودی آهنین پوشیده شده بود. هاتاکه گیج شد و به زمین افتاد. شمشیر بزرگی را بالای سر خود دید که بر او فرود می آید.
+
+[[صفحه بعد -&gt; Flee Fight Scene 2]]</tw-passagedata><tw-passagedata pid="14" name=" Flee Fight Scene 2" tags="" position="330,855" size="100,100">ناگهان تیری از میاد بامبو ها به سر سامورایی برخورد کرد. کلاهخودش افتاد. وحشت زده اطراف را نگاه می کرد که تیغی از شکمش بیرون زد.
+
+« بلند شو رونین»
+
+هاتاکه دستی که به سمتش دراز شد را گرفت و بلند شد. چشمانش هنوز کمی تار میدید.
+آکیرا که به آنها نزدیک شد.
+
+« تو کیستی؟»
+
+هاتاکه خم شد و شمشیرش را برداشت.
+
+«هر کی که باشه، از تو مفید تر بوده برام تا الان»
+
+آن فرد جواب داد: « من ساکورا هیموری هستم. یک رونین، مثل شما»
+
+ناگهان صدای قدم های سنگین گروه سامورایی ها به گوش رسید.
+
+ساکورا گفت : « با من بیایید، راه مخفی شدن را بلدم »
+
+[[صفحه بعد -&gt; Sakora Intoduction 1]]
+</tw-passagedata><tw-passagedata pid="15" name=" Sakora Intoduction 1" tags="" position="460,720" size="100,100">رونین ها همچنان در حال راه پیمایی در جنگل بودند.
+
+ آکیرا به ساکورا را دائم زیر نظر داشت.
+
+«توی یک اونا-موشا هستی؟ جنگجویان زن با نیزه های بلند ناگی-ناتا»
+
+ساکورا نگاهی به آکیرا انداخت، نیزه در دستانش را بالا آورد، پوزخندی زد و گفت:« میبینم که آدم باهوشی هستی؛ بودم، یک سامورایی زن، از قبیله ای که دیگر وجود ندارد.»
+
+هاتاکه ادامه داد:« الانا دیگه همه ش همینه! قبیله ها یا نابود شدند یا معنای خودشون رو از دست دادند.»
+
+آکیرا حرفش را قطع کرد:ِ«چرا تو جنگ ما دخالت کردی؟»
+
+«دیدم دارید زیر دستای  اون سامورایی تلف میشوید خب و البته؛ بهتون نیاز دارم.»
+
+[[صفحه بعد -&gt; Sakora Introdution 2]]
+</tw-passagedata><tw-passagedata pid="16" name=" Sakora Introdution 2" tags="" position="509,846" size="100,100">
+آکیرا و هاتاکه توقف کردند. هاتاکه بر گشت و نگاهی به ساکورا انداخت :«همین الان یک دلیل بهم بده، از وسط نصف ات نکنم تا خیالم از این که بفروشی مون راحت بشه. کارت را بزار برای خودت»
+
+ساکورا:«من، اگر میخواستم شما را بفروشم که خودم رو با نجات دادنتان به درد سر نمی انداختم!»ِ
+
+هاتاکه:« من خودم و شما ها رو خوب میشناسم! میخواستی خودت تنهایی مارو خلاص کنی و به اون ده هزار تا برسی»
+
+آکیرا وسط حرفش پرید:« کارت را بگو.»
+
+ساکورا:«من بحثم پول نیست، انتقامه.»
+
+آکیرا:«چی به ما میرسه؟»
+
+ساکورا:«ارباب سامورایی موساشی از قبیله ناکامارو، یک کاخ کوچک در همین حوالی داره که من راه ورود به آن را بلدم. شما به من در به قتل رساندنش کمک کنید. تمام غنیمت های کاخ برای شما. میدانم یک انبار پر از نمک دارد»
+
+[[صفحه بعد -&gt;  Sakora Introdution 3]]</tw-passagedata><tw-passagedata pid="17" name="  Sakora Introdution 3" tags="" position="615,711" size="100,100">هاتاکه بلند و به مسخره خندید:« نمک!»
+
+آکیرا:«همین جا مسیر ما از تو جدا میشه» برا گشت و شروع به حرکت کرد.
+
+ساکورا:«نه! صبر کنید، شما باید به من کمک کنید. من شما ها رو کامل میشناسم.»
+
+آکیرا توقف کرد و قبضه شمشیرش را گرفت.
+
+ساکورا:«تو هاتاکه هیکارو از سامورایی های اصلی دربار شوگان بودی و تو آکیرا کاوارو... تو هم باید آدم شریفی باشی.»
+آکیرا شمشیرش را ول کرد.
+
+هاتاکه:«خسته نباشی! اینارو که خودمونم میدونستیم.»
+
+ساکورا:«خواهش میکنم. اینها همان کسانی هستند که قبیله ما رو نابود کردند و خانواده ام را به قتل رساندند. باید انتقام خون آنها را بگیرم. اطمینان دارم در کاخ، بزار جنگی گران قیمت و طلا ی بسیاری هم هست. فقط نمک نیست.»
+
+هاتاکه:« آخ من که دلم کباب شد. راه رو راهنمایی کن زن.»
+
+هاتاکه به دنبال ساکورا افتاد. آکیرا هم بدون هیچ حرفی آن ها را همراهی کرد.
+
+[[صفحه بعد-&gt;  Sakora Camp]]</tw-passagedata><tw-passagedata pid="18" name="  Sakora Camp" tags="" position="685,870" size="100,100">شب در جنگل سه رونین دور آتش، اردو زدند.
+هاتاکه روی زمین نشسته و در حال نگاه کردن کاتانا اش هست. آکیرا روی سنگی نشسته و درخت کنارش لم داده.
+
+هاتاکه رو به آکیرا کرد و گفت: «فکر نکن نفهمیدم. موقعی که زیر شمشیر اون سامورایی در حال مرگ بودم، تو وایساده بودی و نگاه میکردی. اما اهمیتی نمی دهم. چون منم اگه جای تو بودم همین کار رو میکردم.»
+
+آکیرا: «ماجرای ما همین هست. اگر خودت نتوانی از پس خودت بر بیای، کسی نیست که بی دلیل کمکت کند.ِ»
+
+هاتاکه: «نتنها کسی قرار نیست کمکت کنه، باید بپایی که کسی هم بهت خیانت نکنه.»
+
+آکیرا: «هیچ کس بی دلیل به آدم خیانت نمیکنه»
+
+هاتاکه: «وقتی دلیل خیانت دیگران میشی، باید عواقب کارت رو قبول کنی»
+
+ساکورا با دستی پر از خار و هیزم آمد و در آتش انداخت.
+ساکورا: «حدود یک نصف روز دیگه مانده به کاخ موساشی، از پشت همین صخره هام قلعه دای میو ناکامارو معلومه. خیلی نزدیک شدیم.»
+
+همه در آرامش بودند که درختان اطراف شروع به تکان خوردن کرد. صدای پارس سگ می آمد. سه رونین برخاستند و اسلحه به دست شدند.
+
+[[صفحه بعد-&gt;  Sakora Camp 2]]</tw-passagedata><tw-passagedata pid="19" name="  Sakora Camp 2" tags="" position="849,745" size="100,100">ناگهان سگی از میان سیاهی پرید. زنجیری به دور گردنش بود. مردی آن را گرفته بود. به زور میتوانست سگ اش را کنترل کند. آکیرا شمشیر اش را به سمت مرد گرفت.
+«نه، نه... من معذورم ارباب سامورایی، سگ ام ناگهان وحشی شد و رم کرد. من را عف بفرمایید.ِ»
+
+آکیرا فریاد زد:« تو کیستی؟ اینجا چه میکنی؟»
+
+مرد:« حقیر شما هستم قربان. من یک فروشنده ای بیش نیستم. داشتم به سمت بندر میرفتم. که این اتفاق افتاد»
+
+هاتاکه شمشیرش را غلاف کرد: «یک فروشنده، پدر من هم یک فروشنده بود، درست مثل خودت دائم بین روستاها و بنادر در سفر بود.»
+
+آکیرا شمشیرش را بالا آورد و به سمتش قدم برداشت. هاتاکه سریع روبرویش ایستاد: «چه غلطی داری میکنی، زورت به این بد بخت رسیده؟»
+
+آکیرا:« اون ما رو دیده فقط کافیه بفهمه برایمان جایزه گذاشته اند.»
+هاتاکه: «این خودش رو هم نیمتونه جمع کنه، تو نترس»
+
+
+(text-style:&quot;sway&quot;)[[[آکیرا هاتاکه را کنار زد. به سمت مرد حمله ور شد-&gt;  Kill Merchant]]]
+
+(text-style:&quot;sway&quot;)[[[آکیرا شمشیرش را پایین آورد-&gt; Spare Merchant]]]
+</tw-passagedata><tw-passagedata pid="20" name="  Kill Merchant" tags="" position="970,886" size="100,100">آکیرا هاتاکه را کنار زد. شمشیرش را در شکم مرد فروشنده فرو کرد. سپس سگ او را از وسط به دو نیم کرد.
+
+«چیکار کردی دیوانه ی احمق» هاتاکه شمشیرش را در آورد. به سمت اش حمله ور شد. آکیرا جلو اش را خالی کرد. با کاتانا اش را به شمشیر هاتاکه کوبید.
+
+«تا همین جا هم هر چه کشیدم از احساساتی شدن و کم عقلی تو بوده! فکر میکنی چرا همه افتادن دنبالمون؟ یادت اومد؟ عواقب کارت رو قبول کن»
+
+هاتاکه نفس عمیقی کشید. کاتانا دستش را روی زمین انداخت. رفت و دور آتش نشست.
+ساکورا همانطور خیره مانده بود: «به نظرم... باید بخوابید... فردا کلی پول در انتظاره!»
+(set: $_GUNNED to false)
+
+[[صفحه بعد-&gt;  Invading 1]]
+</tw-passagedata><tw-passagedata pid="21" name=" Spare Merchant" tags="" position="1020,658" size="100,100">آکیرا شمشیرش را پایین آورد. هاتاکه سمت مرد رفت.زره اش در آورد. یکی از یاقوت های رویش را کند و جیبش گذاشت. زره گران بها و جواهر نشان دای میو تاراگوا را به فروشنده داد.
+
+« این بگیر، قطعا ارزش یکی از این جواهرات روش چند برابر اون هزار سکه ای هست که جایزه گذاشتند. حالا از اینجا برو سعی کن یادت برود امشب چی دیدی و گرنه مجبورم خودم از یادت ببرم.»
+
+فروشنده: «مممم... ممنونم ارباب سامورایی...ِ»
+
+سگ همچنان در حال پارس کردن و غره کشیدن بود. مرد سعی میکرد زنجیرش را بکشد و  از آنجا برود. اما نمی توانست.
+ناگهان خنجری بر پیشانی سگ فرو رفت و جان داد.
+
+آکیرا: «بهتر است این دیگر اطرافت نباشد.»
+مرد فروشنده لحظه ای درنگ نکرد و از صحنه فرار کرد.
+آکیرا رو به هاتاکه کرد:ِ« دست و دلباز شدی!»
+
+هاتاکه: «در هر صورت باید از شر اون وزنه سنگین خلاص میشدم. اون بدرد همون ارابه نشینی میخورد، همین زره زنجیری برای من کافیه»
+(set: $_GUNNED to true)
+[[صفحه بعد-&gt;  Invading 1]]
+
+</tw-passagedata><tw-passagedata pid="22" name="  Invading 1" tags="" position="1177,761" size="100,100">هر سه رونین به کاخ موساشی رسیدند.
+ساکورا دیگران را به سمتی از کاخ که یک راه ورودی آسان داشت راهنمایی کرد.
+
+«آکیرا، این دو سرباز کنار دیوار تنها سربازان این ضلع از کاخ هستند. با از پا در آوردن این دو، میتوان به راحتی از یک نقطه کور وارد اتاق موساشی شد. فقط حواستان باشد. موساشی را برای خودم نگه دارید.»
+
+آکیرا یکی از خنجر هایش را به دست گرفت، یکی از سربازان را نشانه گرفت. همزمان ساکورا کمان خودش را آماده کرد و سرباز دیگر را نشانه گرفت.
+
+دو سرباز از پا در آمدند. ساکورا یکی از آب راه هایی که از دیوار میگذشت را نشان داد.
+هر سه وارد قلعه کوچک شدند.
+پس از خفت کردن و کشتن تعدادی سرباز دیگر به اتاق اصلی رسیدند.
+
+موساشی پشت میزش، روی زمین نشسته بود. ناگهان شمشیری از یکی از دیوار ها کاغذی بیرون زد. رونین ها وارد اتاق سامورایی شدند.
+
+
+[[صفحه بعد-&gt;  Invading 2]]
+</tw-passagedata><tw-passagedata pid="23" name="  Invading 2" tags="" position="1375,906" size="100,100">ساکورا به سمت سامورایی حمله ور شد: « اونها کجان خوک کثیف. بهتره از جون دادنت رو از این سخت تر نکنی... اون ها کجان؟»
+هاتاکه:« آره، راست میگه نمک ها کجان»
+آکیرا هاتاکه را عقب کشید.
+
+سامورایی رو به ساکورا گفت:« ببین چه کسی مرا یک حیوان خطاب میکند. متوجه نشدی! در این قلعه جر من تعدادی سرباز کسی نیست.»
+ساکورا فریاد زد:« گزافه گویی نکن! بچه های من کجان؟»
+هاتاکه و آکیرا با تعجب همدیگر را نگاه کردند.
+
+سامورایی: « همه اهالی اینجا به قلعه اصلی ناکامارو رفتند. هیچ وقت دستت به بچها نمیرسد!»
+
+ساکورا نیزه اش را در سینه سامورایی فرو برد. رو به رونین ها کرد:« شما باید با من بیایید، باید برویم قلعه ناکامارو.»
+
+[[صفحه بعد-&gt;  Revealing]]
+</tw-passagedata><tw-passagedata pid="24" name="  Revealing" tags="" position="1355,690" size="100,100">هاتاکه: «بزار حدس بزنم، اونجا نمک بیشتری وجود داره؟»
+
+آکیرا: «گفتی اسم قبلیه ات رو که موساشی نابود کرد چی بود؟»
+
+ساکورا زانو زد و به نیزه اش تکیه داد:ِ «میدانم. به شما دروغ گفتم. من هیچ وقت قبیله ای نداشتم که نابود بشود. من فقط به دنبال دو کودکم هستم.»
+
+هاتاکه :«چرا فکر کردی پس انداخته هات، برا ما مهمه؟»
+
+ساکورا همانطور که زانو زده بود سرش را انداخت پایین. لباس گشادش شروع به حرکت کردن کرد. تمام بدنش در پارچه پنهان شد.
+
+[[صفحه بعد-&gt;  Revealing 2]]
+
+
+</tw-passagedata><tw-passagedata pid="25" name="  Revealing 2" tags="" position="1493.3333333333333,631.6666666666666" size="100,100">ناگهان ساکورا تبدیل به یک روباه شد. روباه نارنجیِ دو دم، به بیرون از دوید.
+هاتاکه و آکیرا خشکشان زده بود. به دنبال روباه رفتند. از اتاق بیرون آمدند.
+ساکورا بیرون ایستاده بود. دوباره به شکل یک انسان.
+
+آکیرا:«یک یو-کای، هیچ وقت فکر نمی کردم شما، ارواح افسانه ای، وجود داشته باشید »
+هاتاکه:« یک کیت-سونه، روباه فریب کار!»
+
+ساکورا: « من فریب کار نیستم. من یک شیطان نیستم. طلسم شده ام. کاری کرده ام که نباید تو طبیعت اتفاق می افتاد.»
+ساکورا سکوت کرد. نفس عمیقی کشید: «اگر به من کمک کنید. دعای من همواره در مسیر زندگی همراهتان خواهد بود.»
+
+آکیرا: «اما رفتن به قلعه ناکامارو، نشدنی است. قلعه پر است از سامورایی های تا دندان مسلح.»
+
+هاتاکه:«نه آکیرا، میشه این کار رو تموم کرد. همیشه یک راهی هست»
+پوزخندی زد و ادامه داد:« به قلعه میریم. برا نجات دو طفل این... موجود»
+
+[[صفحه بعد-&gt;  Back On Camp]]
+</tw-passagedata><tw-passagedata pid="26" name="  Back On Camp" tags="" position="1553.3333333333335,839.0000000000001" size="100,100">
+دو رونین و ساکورا به سمت قلعه ناکامارو راهی شدند. به اردو ای که قبلا زده بودند رسیدند. هاتاکه رو به دیگران گفت: « امشب رو همین جا منتظر می مونیم. به قلعه نگاهی انداختم، ضلع شرقی کاملا نفوذ پذیره. فردا قبل از طلوع آفتاب به شبیخون را شروع میکنیم. اگر بتونیم مستقیم وارد اتاق دای میو بشیم. بقیه کار راحته!»
+
+هر سه کنار آتش اطراق کردند. هاتاکه و ساکورا چرت میزدند. آکیرا برخاست. تیر و کمان ساکورا را از کنارش برداشت. به بالای صخره ها رفت. قلعه ناکامارو در پایین دست او در چند فرسخی قرار داشت.
+از خرجین روی دوش اش، یک قلم و کاغذ در آورد. شروع کرد به نوشتن.
+
+[[صفحه بعد-&gt;  Exposing]]
+</tw-passagedata><tw-passagedata pid="27" name="  Exposing" tags="" position="1747.3333333333335,703" size="100,100">&quot; 
+//فردا قبل از طلوع آفتاب، به قلعه شبیخون زده میشود.
+از دای میو محافظت کنید.
+تعداد کم هست اما حقه های زیادی در آستین دارند.
+مراقب ضلع شرقی کاخ باشید.
+
+
+شینوبی توشی ناکامارو.//
+&quot;
+
+یک دستش را مشت کرد و با خنجرش خراشی بر انگشتان مشتش کشید.
+مشتش را پای کاغذ کوبید.
+نامه لوله کرد. به یک تیر بست. تیر را به زه کرد. کمان را به سمت قلعه نشانه گرفت و بالا آورد.
+نفس عمیقی کشید.
+
+(text-style:&quot;sway&quot;)[
+(if:$_GUNNED is true)[(link: &quot;تیر را رها کرد.&quot;)[(set: $_EXPOSED to true))(goto: &quot;Merchant Comeback&quot;)]
+
+(link: &quot;کمان را پایین آورد و نامه را سوزاند.&quot;)[(set: $_EXPOSED to false))(goto: &quot;Merchant Comeback&quot;)]]
+
+
+(if:$_GUNNED is false)[(link: &quot;تیر را رها کرد.&quot;)[(set: $_EXPOSED to true))(goto: &quot;Scouting&quot;)]
+
+(link: &quot;کمان را پایین آورد و نامه را سوزاند.&quot;)[(set: $_EXPOSED to false))(goto: &quot;Scouting&quot;)]]
+]</tw-passagedata><tw-passagedata pid="28" name="Merchant Comeback" tags="" position="1711.6666666666667,856.3333333333334" size="100,100">خنکی سحر و نوای فلوت ساکورا را بیدار کرد. برخاست و اطراف را نگاه کرد. سایه ای در مه صبحگاهی به آن ها نزدیک میشد. دو رونین را بیدار کرد. هر سه سلاح های خود را برداشتند و برای هر اتفاقی آماده شدند.
+
+ناگهان مرد فلوت زن از میان مه پدیدار شد.
+
+هاتاکه: «بازم تو؟» 
+
+مرد فلوت زدن را متوقف کرد و زانو زد: «ااا... ارباب... من... عذر مرا بپذیرید. این کاملا اتفاقی بود. داشتم از بندر بر میگشتم. متوجه شما نشدم.»
+
+آکیرا فلوت مرد فروشنده را گرفت و از وسط دو نیم کرد: «بهتره این اطراف هیچ صدایی تولید نکنی.»
+مرد برخاست از کوله ی بزرگ پشت اش را بر زمین گذاشت و داخل آن خم شد. از کوله اش شئ بلندی را در آورد. رو به هاتاکه کرد:« قربان... این پیشکش را از من بپذیرید. این یک اسلحه است، از خارجی ها خریدم. به آن می گویند تفنگ»
+
+هاتاکه تفنگ را از دستش قاپید:«ها ها... ازینا... قبلا دیده بودم. تیر کمان های خارجی...» 
+رو به ساکورا کرد و تفنگ اش را بالا آورد: «بفرما... اینم برگ برنده ما»
+
+(if:$_EXPOSED is false)[آکیرا: «مطمئنی این اسلحه پر سر و صدا به کارمان خواهد آمد»]
+
+(if:$_EXPOSED is true)[آکیرا: «مطمئنی این اسلحه پر سر و صدا به کارت می آید»
+]
+
+هاتاکه بلند خندید: «این رفیقم رو کسی نمیتونه ازم جدا کنه»
+
+آکیرا زیر لب گفت: «لعنت برتو...»
+
+[[صفحه بعد-&gt;Scouting]]
+</tw-passagedata><tw-passagedata pid="29" name="Scouting" tags="" position="1973.3333333333333,751" size="100,100">هر سه به نزدیک ترین فاصله ممکن رسیدند. هاتاکه به محافظی که روی دیوار قرار داشت اشاره کرد. ساکورا تیر و کمانش را نشانه گرفت. محافظ را منهدم کرد.
+
+روی دیوار بدون نگهبان، طناب انداختند و از آن بالا رفتند. خود را به آنسوی دیوار رساندند.
+
+(if:$_EXPOSED is true)[ (if:$_GUNNED is true)[[[صفحه بعد-&gt;Akira Betrayal]]]]
+
+(if:$_EXPOSED is true)[ (if:$_GUNNED is false)[[[صفحه بعد-&gt;Akira Betrayal]]]]
+
+(if:$_EXPOSED is false)[ (if:$_GUNNED is true)[[[صفحه بعد-&gt;Akira Allience]]]]
+
+
+(if:$_EXPOSED is false)[ (if:$_GUNNED is false)[[[صفحه بعد-&gt;Akira Allience]]]]
+
+</tw-passagedata><tw-passagedata pid="30" name="EXPOSED AND GUNNED" tags="" position="1702.3333333333333,1109.3333333333333" size="100,100">سامورایی ها به سمتشان هجوم بردند. هاتاکه ضربه اول را با کاتانا دفع کرد. ضربه دوم و ضربه سوم. ساکورا نیزه خود را به جلو گرفته بود. سامورایی ها به سختی میتوانستند به او نزدیک شوند.
+تعداد سامورایی ها دائم در حال افزایش بود. شمارش از دست هاتاکه و ساکورا خارج شد. هاتاکه شمشیرش را در هوا میچرخاند و ضربات را دفع میکرد.
+
+در همان لحظه تیری در کتفش فر و رفت. با لگد سربازی یکی از زانو هایش خم شد، تقریبا به زمین افتاده بود. ساکورا به کمک اش آمد و دستش را گرفت.
+ناگهان شمشیری شکم ساکورا را شکافت.
+
+هاتاکه تعادلش را از دست داده بود. دست بر پشتش برد. تفنگ جدید اش را بدست گرفت و به سمت سامورایی روبرو شلیک کرد.
+صدای مهیب گلوله سربازان را ترساند. برای چند لحظه همه خشکشان زد.
+
+هاتاکه همزمان که تفنگ را با باروت پر میکرد به سمت دیوار ها عقب نشینی کرد. به بالای دیوار طناب انداخت. از دیوار بالا رفت.
+توانست خود را از مهلکه نجات دهد.
+
+[[صفحه بعد-&gt;Hatake Injured Ending]]</tw-passagedata><tw-passagedata pid="31" name="EXPOSED AND Not GUNNED" tags="" position="2271.6666666666665,1107.3333333333333" size="100,100">سامورایی ها به سمتشان هجوم بردند. هاتاکه ضربه اول را با کاتانا دفع کرد. ضربه دوم و ضربه سوم. ساکورا نیزه خود را به جلو گرفته بود. سامورایی ها به سختی میتوانستند به او نزدیک شوند.
+تعداد سامورایی ها دائم در حال افزایش بود. شمارش از دست هاتاکه و ساکورا خارج شد. هاتاکه شمشیرش را در هوا میچرخاند و ضربات را دفع میکرد.
+
+در همان لحظه تیری در کتفش اصابت کرد. با لگد سربازی، یکی از زانو هایش خم شد، تقریبا به زمین افتاده بود. ساکورا به کمک اش آمد و دستش را گرفت.
+ناگهان شمشیری شکم ساکورا را شکافت.
+
+هاتاکه تعادلش را از دست داد. بر دو زانویش فرود آمد. نگاهی به جسد ساکورا انداخت. کاتانا اش را بالا آورد و در شکم خود فرو کرد.
+
+(link: &quot;پایان&quot;)[(set: $_EXPOSED to false)(goto: &quot;Initializer&quot;)]
+</tw-passagedata><tw-passagedata pid="32" name="Not EXPOSED AND GUNNED" tags="" position="2229,462.3333333333333" size="100,100">دو رونین و ساکورا به اتاق دای میو ناکامارو وارد شدند. تعظیم کردند.
+ناکامارو از جایش برخاست: « درورد بر تو شینوبی توشی»
+ساکورا و هاتاکه با تعجب به یکدیگر خیره شدند.
+
+دای میو ادامه داد: «خیلی خوشحالم، که یک مامور کار درستی مثل تو در خدمت دارم. بهتر است بگویم... خوش حال بودم! تا این که خبر آمد تاراگوسا کشته شده است. تو شکست خوردی شینوبی»
+
+آکیرا زانو زد:« ارباب مرا عفو بفرمایید. من تمام تلاش خودم را کردم. کار این روستایی های احمق بود. اگر بیشتر اصرار به نکشتن میکردم، پوشش ما کاملا لو میرفت.»
+
+هاتاکه: « اینجا چه خبره؟ تاراگوسا رو من کشتم. و مطمئن باش این آخرین دای میو نخواهد بود که بدست من نابود میشود»
+
+هاتاکه دست بر پشتش برد و تفنگ جدید اش در آورد. به سمت ناکامارو نشانه گرفت.
+جمعیت شکه شدند. چند سامورایی به داخل اتاق، با شمشیر های کشیده حاضر شدند. ساکورا نیزه اش را به سمتشان گرفت.
+
+هاتاکه: «ما اینجا تنها برای یک چیز اومدیم. فرزندان این زن. دو کودکی که همراه با خانواده موساشی به کاخت اومدند. اون ها رو به تحویل بده. من هم پیشانی ات را پاره نمی کنم.»
+
+آکیرا خشمگین فریاد: «چه، غلطی داری میکنی؟ همین الان تفنگ را بگیر پایین»
+هاتاکه: «آکیرا، به این ارباب های تو خالی اعتماد نکن.»
+
+[[صفحه بعد-&gt;Not EXPOSED AND GUNNED 2]]</tw-passagedata><tw-passagedata pid="33" name="Not EXPOSED AND Not GUNNED" tags="" position="1896.6666666666667,407.3333333333333" size="100,100">دو رونین و ساکورا به اتاق دای میو ناکامارو وارد شدند. تعظیم کردند.
+ناکامارو از جایش برخاست: « درورد بر تو شینوبی توشی»
+ساکورا و هاتاکه با تعجب به یکدیگر خیره شدند.
+
+دای میو ادامه داد: «خیلی خوشحالم، که یک مامور کار درستی مثل تو در خدمت دارم. بهتر است بگویم... خوش حال بودم! تا این که خبر آمد تاراگوسا کشته شده است. تو شکست خوردی شینوبی»
+
+آکیرا زانو زد:« ارباب مرا عفو بفرمایید. من تمام تلاش خودم را کردم. کار این روستایی های احمق بود. اگر بیشتر اصرار به نکشتن میکردم، پوشش ما کاملا لو میرفت.
+ 
+دای میو: «کاش میتوانستم برایت کاری انجام بدهم شینوبی. با کشته شدن تاراگوسا در وضعیت مساعدی نیستم. جایگزین او خیلی سر سخت تر از خودش است. باعث شدی تمام نقشه هایمان بی ارزش بشوند.»
+ناکامارو کاتانه در غلاف طلا کوب شده خودش را برداشت. دستش را سمت آکیرا دراز کرد.
+
+«هنوز فرصت داری. شرافت خودت را حفظ کنی سامورایی.»
+
+[[صفحه بعد-&gt;Akira Die Ending]]</tw-passagedata><tw-passagedata pid="34" name="Hatake Injured Ending" tags="" position="1325.6666666666667,1223.3333333333333" size="100,100">هاکاته تیر را از کتفش خارج کرد. لنگ لنگ زنان از قلعه دور شد.
+
+«حتما یک ملاقات دیگری خواهیم داشت، سامورایی»
+
+(link: &quot;پایان&quot;)[(set: $_EXPOSED to false)(goto: &quot;Initializer&quot;)]
+</tw-passagedata><tw-passagedata pid="35" name="Akira Betrayal" tags="" position="1997,976.6666666666666" size="100,100">آهسته و خمیده از قدم بر میداشتند که ناگهان یک تیر جلو پای هاتاکه بر زمین فرود آمد. در یک چشم بهم زدن دورشان را سامورایی ها و نگهبانان با شمشیر های بیرون کشید و کمان های زه شده، فرا گرفتند.
+هاتاکه:«فکر کنم نقشه مخفیانه مون جواب نداد. وقت جنگه»
+کاتانا اش را بیرون کشید. ساکورا نیزه اش را به حالت رزم گرفت.
+
+هاتاکه  رو به آکیرا کرد: «فکر کنم بهتره از اون خنجر هات استفاده کنی.»
+آکیرا همانطور ایستاد.
+هاتاکه با تعجب برگشت. آکیرا عقب کشیده بود. 
+«تو، حروم زاده... عقب نشینی نمی کنی!»
+آکیرا آرام آرام از آن جمع دور شد.
+
+(if:$_GUNNED is true)[[[صفحه بعد-&gt;EXPOSED AND GUNNED]]]
+
+(if:$_GUNNED is false)[[[صفحه بعد-&gt;EXPOSED AND Not GUNNED]]]</tw-passagedata><tw-passagedata pid="36" name="Akira Allience" tags="" position="2192.3333333333335,695.6666666666667" size="100,100">
+هر سه به نزدیک ترین فاصله ممکن رسیدند. هاتاکه به محافظی که روی دیوار قرار داشت اشاره کرد. ساکورا تیر و کمانش را نشانه گرفت. 
+آکیرا دستان ساکورا را گرفت و کمان نشانه گیره شده اش را پایین آورد.
+«این کار ها کار ساز نیست. بسپریدش به من»
+آکیرا از پوشش در آمد و به سمت دروازه قلعه رفت. به رونین و کای-میو اشاره کرد. آنها نیز همراهش شدند.
+
+«دروازه را باز کنید!»
+
+یکی از نگهبان بالای دروازه فریاد زد: «کیستی غریبه»
+آکیرا پاسخ داد: «من توشی ناکامارو هستم. به ارباب ناکامارو نام مرا بگویید. خودش باز اطلاع دارد»
+نگهبان به سمت دیگر سامورایی ها رفت.
+
+هاتاکه: «یک دنیا ازت سوال دارم. کاش برام مهم بودی تا ازت بپرسم.»
+ساکورا: «من نمیدانم چه چیزی در سرت میگذرد آکیرا، اما به هر قیمتی شده باید فرزندانم رو به من برسانی»
+آکیرا:« به من اعتماد کنید و فقط سکوت کنید»
+نگهبان بازگشت و دروازه برایشان باز کرد و آنها را به اتاق دای میو راهنمایی کرد.
+
+
+(if:$_GUNNED is true)[[[صفحه بعد-&gt;Not EXPOSED AND GUNNED]]]
+
+(if:$_GUNNED is false)[[[صفحه بعد-&gt;Not EXPOSED AND Not GUNNED]]]]</tw-passagedata><tw-passagedata pid="37" name="Not EXPOSED AND GUNNED 2" tags="" position="2234.0000000000005,260.66666666666663" size="100,100">هاتاکه به ارباب نزدیک شد: «دستور بده! همین حالا... همین حالا... همیـ....»
+
+ناگهان خنجری در گردن هاتاکه فرو رفت. همچنان هدف گرفته بود.
+خنجر دیگری به سمتش پرتاب شد و خنجر دیگری در سرش فرو رفت.
+
+هاتاکه نقش بر زمین شد. ساکورا ترسید. نیزه اش را انداخت و دستانش را به نشانه تسلیم شدن بالا آورد.
+
+آکیرا به سمت جسد هاتاکه رفت و خنجر هایش را ازش بدن او جدا کرد.
+
+دای میو: «هنوز خوب کارت را بلدی شینوبی»
+
+آکیرا: «قربان، خواسته مان را این دیوانه گفت. لطفا فرزندان این زن را به او برگردانید. او برای حفظ شرافتش اینجاست»
+
+[[صفحه بعد-&gt;Hatake Sakora Die Ending]]</tw-passagedata><tw-passagedata pid="38" name="Hatake Sakora Die Ending" tags="" position="2007.3333333333333,82.33333333333329" size="200,100">دای میو با دستانش به سرباز ها اشاره کرد. سامورایی ها شمشیر های خود را در بدن زن فرو کردند. 
+ساکورای تسلیم شده، بی جان بر زمین افتاد.
+
+آکیرا چند لحظه ای به جسد او خیره ماند. رو به ارباب کرد.
+
+دای میو: «شینوبی، تو در جایگاهی نیستی که به من بگی چکار کنم. الان باید تعظیم کنی و بخاطر نفسی که میکشی از من تشکر کنی. با کشته شدن تاراگوسا اوضاع خیلی بد تر از قبل شده. من تو را بخاطر کار امروزت عفو میکنم. از اینجا برو. تو دیگر مقام یک سامورایی را نخواهی نداشت.»
+
+دو سامورایی آمدند و دستان آکیرا را گرفته و او را به بیرون از قلعه پرت کردند .
+
+آکیرا همان جا نشست. نفس عمیقی کشید: « لعنت بر تو هاتاکه»
+
+(link: &quot;پایان&quot;)[(set: $_EXPOSED to false)(goto: &quot;Initializer&quot;)]
+</tw-passagedata><tw-passagedata pid="39" name="Akira Die Ending" tags="" position="1739.9999999999998,235.66666666666666" size="100,100">آکیرا نگاهی به ساکورا انداخت. سپس به هاتاکه رو کرد. هاتاکه آرام به او گفت: «لازم نیست این کار رو بکنی»
+
+آکیرا سرش را پایین انداخت. به سمت دای میو رفت. کاتانا را گرفت. 
+
+رو به ارباب کرد: «برای حفظ شرافت و وفاداری به ارباب ناکامارو.»
+
+شمشیر را از غلاف بیرون آورد.
+
+«از شما خواسته ای دارم ارباب، این دو فرزند این زن، گروگان موساشی بودند که به کاخ شما آمده اند. آن ها به دست این دو بدهید.»
+دای میو سرش را به نشانه تایید تکان داد.
+
+آکیرا کاتانا را در شکم خوش فرو کرد.
+
+[[صفحه بعد-&gt;Akira Die Ending 2]]</tw-passagedata><tw-passagedata pid="40" name="Akira Die Ending 2" tags="" position="1544.9999999999998,153.99999999999997" size="100,100">هاتاکه از قلعه خارج شد.
+نگاهی به دروازه انداخت.
+برگشت و از آنجا دور شد.
+
+ناگهان روباهی را دید که به سمتش میدود، ایستاد. روباه در دهانش کیسه ای بود. کیسه را جلوی پای رونین انداخت.
+
+خم شد. کیسه را برداشت و باز کرد:«نمک!»
+
+روباه به سرعت از آنجا دور شد. به سمت دو توله خودش رفت. هر سه روباه به سمت جنگل دویدند.
+
+«هر روز عجیب تر از دیروز.»
+
+(link: &quot;پایان&quot;)[(set: $_EXPOSED to false)(goto: &quot;Initializer&quot;)]
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,i=!1,a=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){i=!0,a=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw a}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
